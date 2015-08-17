@@ -1,0 +1,4 @@
+services:
+#    elastica_client_frontend.example:
+#        class: ElasticaClient\FrontendBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

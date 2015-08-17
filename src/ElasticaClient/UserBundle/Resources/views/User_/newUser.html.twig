@@ -1,0 +1,23 @@
+{% extends 'ElasticaClientUserBundle:Default:index.html.twig' %}
+
+{% block body %}
+<div class="container">
+	<h4>Add New User</h4>
+	<a href="{{ path('api_v1_get_users') }}">Return to list</a>
+	<br></br>
+	{% if form.error is defined and form.error == 'user-exist' %}
+	<p>User with this email already exists!</p>
+	{% endif %}
+	{% if (form is not null) %}
+		{% set userName = form.name.vars.value %}
+		{% set userEmail = form.email.vars.value %}
+	{% endif %}
+	<div>
+		{{ form_errors(form)}}
+	</div>
+	<form method="post" action="{{ path('api_v1_post_user') }}" {{ form_enctype(form) }}>
+		{{ form_widget(form) }}
+        <input type="submit" value="submit">
+	</form>
+</div>
+{% endblock %}

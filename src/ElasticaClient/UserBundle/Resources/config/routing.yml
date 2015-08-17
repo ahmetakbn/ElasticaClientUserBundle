@@ -1,0 +1,5 @@
+elasticaclient_user_User:
+    type: rest
+    prefix: /v1
+    resource: 'ElasticaClient\UserBundle\Controller\UserController'
+    name_prefix: api_v1_

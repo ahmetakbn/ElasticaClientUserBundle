@@ -1,0 +1,40 @@
+{% extends 'default/index.html.twig' %}
+
+{% block stylesheets %}
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="{{ asset('bundles/frontend/libs/bootstrap/dist/css/bootstrap.min.css') }}">
+{% endblock %}
+
+{% block nav %}
+	<!-- HEADER -->
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">User Management (Symfony2 - Elastica for ElasticSearch - AngularJS)</a>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+	<div ng-app="app" ng-controller="UserController">
+		<div class="container" ng-view=""></div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="{{ asset('bundles/frontend/libs/jquery/dist/jquery.min.js') }}"></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="{{ asset('bundles/frontend/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+	
+	<!-- AngularJs Library -->
+	<script src="{{ asset('bundles/frontend/libs/angular/angular.min.js') }}"></script>
+	<script src="{{ asset('bundles/frontend/libs/angular-route/angular-route.min.js') }}"></script>
+	
+	<!-- Angular Scripts -->
+	<script src="{{ asset('bundles/frontend/js/app.js') }}"></script>
+	<script src="{{ asset('bundles/frontend/js/appRoutes.js') }}"></script>
+	<script src="{{ asset('bundles/frontend/js/services/UserService.js') }}"></script>
+	<script src="{{ asset('bundles/frontend/js/controllers/UserController.js') }}"></script>
+	<!-- endbuild -->
+{% endblock %}

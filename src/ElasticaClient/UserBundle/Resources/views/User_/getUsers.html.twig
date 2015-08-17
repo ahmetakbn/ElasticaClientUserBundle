@@ -1,0 +1,32 @@
+{% extends 'ElasticaClientUserBundle:Default:index.html.twig' %}
+
+{% block body %}
+<div class="container">
+	<h4>User List</h4>
+	<a href="{{ path('api_v1_new_user') }}">Add New User</a>
+	{% if users %}
+	<table class="table">
+    <thead>
+      <tr>
+        <th>Use Name</th>
+        <th>Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.name }}</td>
+        <td>
+        	<a href="{{ path('api_v1_get_user', {'userID':user.id}) }}">show</a> | 
+        	<a href="">edit</a> | 
+        	<a href="">delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  	<p>No users found! Please add user</p>
+  {% endif %}
+</div>
+{% endblock %}

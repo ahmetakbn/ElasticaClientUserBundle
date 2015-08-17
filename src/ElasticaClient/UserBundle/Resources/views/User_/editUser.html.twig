@@ -1,0 +1,36 @@
+{% extends 'default/index.html.twig' %}
+
+{% block body %}
+<div class="container">
+	<h4>Edit User</h4>
+	<a href="{{ path('elasticaclient_user_list') }}">Return to list</a>
+	<br></br>
+	{% if error == "not-found" %}
+	<p>User by this id not found</p>
+	{% elseif error == "user-exist" %}
+	<p>User with this email already exists!</p>
+	{% else %}
+	<div>
+		{{ form_errors(form)}}
+	</div>
+	<form method="post" action="{{ path('elasticaclient_user_edit',{'userId': userId}) }}" {{ form_enctype(form) }}>
+		<div class="form-group">
+			{{ form_widget(form.name, {'attr': {'placeholder':'Name', 'value':user.name}}) }}
+			<div class="form-error-main">{{ form_errors(form.name) }}</div>
+		</div>
+		<div class="form-group">
+			{{ form_widget(form.email, {'attr': {'placeholder':'Email', 'value':user.email}}) }}
+			<div class="form-error-main">{{ form_errors(form.email) }}</div>
+		</div>
+		<div class="form-group">
+			{{ form_widget(form.password, {'attr': {'placeholder':'Password'}}) }}
+			<div class="form-error-main">{{ form_errors(form.password) }}</div>
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Edit User" />
+		</div>
+		{{ form_rest(form) }}
+	</form>
+	{% endif %}
+</div>
+{% endblock %}

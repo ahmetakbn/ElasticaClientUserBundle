@@ -1,0 +1,36 @@
+<h4>Add New User</h4>
+<a href="#/">Return to list</a>
+<br></br>
+<div ng-show="userexist" style="color:maroon">
+	User by this email already exist<br></br>
+</div>
+<form name="userForm" ng-submit="addUser(userForm.$valid)" novalidate>
+	<div class="form-group">
+		<input type="text" name="name" ng-model="user.name" placeholder="Name" required>
+		<div class="form-error-main" ng-show="userForm.name.$dirty && userForm.name.$invalid" style="color:maroon">
+			<span ng-show="userForm.name.$error.required">Name is Required!</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<input type="email" name="email" ng-model="user.email" placeholder="Email" required>
+		<div class="form-error-main" ng-show="userForm.email.$dirty && userForm.email.$invalid" style="color:maroon">
+			<span ng-show="userForm.email.$error.required">Email is required.</span>
+  			<span ng-show="userForm.email.$error.email">Invalid email address.</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<input type="password" name="password" ng-model="user.password" placeholder="Password" required>
+		<div class="form-error-main" ng-show="userForm.password.$dirty && userForm.password.$invalid" style="color:maroon">
+			<span ng-show="userForm.password.$error.required">Password is Required!</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<input 	type="submit" value="Add User" 
+				ng-disabled="
+					userForm.name.$dirty && userForm.name.$invalid ||
+  					userForm.email.$dirty && userForm.email.$invalid ||
+					userForm.password.$dirty && userForm.password.$invalid
+  				"
+  		/>
+	</div>
+</form>

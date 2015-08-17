@@ -1,0 +1,12 @@
+elastica_client_frontend:
+    resource: "@ElasticaClientFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+elasticaclient_user:
+    type: rest
+    prefix:   /api
+    resource: "@ElasticaClientUserBundle/Resources/config/routing.yml"
+    
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

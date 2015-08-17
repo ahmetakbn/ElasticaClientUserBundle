@@ -1,0 +1,7 @@
+parameters:
+    #Elastica Parameters
+    elastica.host: localhost
+    elastica.port: 9200
+    elastica.index: elastica
+    elastica.type: user
+    

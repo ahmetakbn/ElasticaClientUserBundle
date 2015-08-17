@@ -1,0 +1,3 @@
+elastica_client_frontend_homepage:
+    path:     /
+    defaults: { _controller: ElasticaClientFrontendBundle:Default:index }
