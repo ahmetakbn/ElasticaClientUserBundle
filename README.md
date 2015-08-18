@@ -43,3 +43,6 @@ ElasticaClient is an example user management symfony2 bundle. It is a Restful Ap
 6. Browse `http://host:port/path-to-project/web/app_dev.php/`
 
 Not: You can use different Index and Type in Elasticsearch. For that please change the parameters from `/path-to-project/src/ElasticaClient/UserBundle/Resources/config/parameters.yml` and create your Elasticsearch Index and Type.
+
+### API Documentation
+Browse `http://host:port/path-to-project/web/app_dev.php/api/doc` to see Restful api documentation created by Nelmio Api Doc Bundle.
