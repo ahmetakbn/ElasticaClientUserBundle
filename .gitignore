@@ -1,4 +1,5 @@
 /web/bundles/frontend/libs
+/src/ElasticaClient/UserBundle/Resources/views/User_
 /app/bootstrap.php.cache
 /app/cache/*
 /app/logs/*
