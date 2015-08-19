@@ -32,9 +32,7 @@ class UserController extends FOSRestController {
 	 *   }
 	 * )
 	 *
-	 * @Annotations\View(
-	 *  templateVar="users"
-	 * )
+	 * @Annotations\View()
 	 *
 	 * @return array
 	 *
@@ -57,9 +55,7 @@ class UserController extends FOSRestController {
 	 *   }
 	 * )
 	 *
-	 * @Annotations\View(
-	 * 	templateVar="user"
-	 * )
+	 * @Annotations\View()
 	 *
 	 * @param $userID
 	 * @return array
@@ -81,9 +77,7 @@ class UserController extends FOSRestController {
 	 * 	 }
 	 * )
 	 *
-	 * @Annotations\View(
-	 *  templateVar = "user"
-	 * )
+	 * @Annotations\View()
 	 *
 	 * @return FormTypeInterFace
 	 *
@@ -106,11 +100,7 @@ class UserController extends FOSRestController {
 	 *   }
 	 * )
 	 *
-	 * @Annotations\View(
-	 *  template = "ElasticaClientUserBundle:User:newUser.html.twig",
-	 *  statusCode = Codes::HTTP_BAD_REQUEST,
-	 *  templateVar = "user"
-	 * )
+	 * @Annotations\View()
 	 *
 	 * @param Request $request
 	 * @throws UserExistException, InvalidFormException
@@ -148,10 +138,7 @@ class UserController extends FOSRestController {
 	 *   }
 	 * )
 	 *
-	 * @Annotations\View(
-	 *  template = "ElasticaClientUserBundle:User:editUser.html.twig",
-	 *  templateVar = "form"
-	 * )
+	 * @Annotations\View()
 	 *
 	 * @param string $userID
 	 * @param Request $request
