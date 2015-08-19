@@ -115,7 +115,7 @@ class UserController extends FOSRestController {
 
 			$routeOptions = array('userID' => $user -> getId(), '_format' => $request -> get('_format'));
 
-			return $this -> routeRedirectView('api_v1_get_user', $routeOptions, 201);
+			return $this -> routeRedirectView('api_v1_get_user', $routeOptions, Codes::HTTP_CREATED);
 
 		} catch(UserExistException $exception) {
 			return array('error' => $exception -> getError());
@@ -154,7 +154,7 @@ class UserController extends FOSRestController {
 
 			$routeOptions = array('userID' => $user -> getId(), '_format' => $request -> get('_format'));
 
-			return $this -> routeRedirectView('api_v1_get_user', $routeOptions, 201);
+			return $this -> routeRedirectView('api_v1_get_user', $routeOptions, Codes::HTTP_CREATED);
 
 		} catch(UserExistException $exception) {
 			return array('error' => $exception -> getError());
@@ -184,7 +184,7 @@ class UserController extends FOSRestController {
 			$userHandler = $this -> get('elastica.user.handler');
 			$userHandler -> delete($userID);
 
-			return array('code' => 200);
+			return array('code' => Codes::HTTP_OK);
 		}
 	}
 
