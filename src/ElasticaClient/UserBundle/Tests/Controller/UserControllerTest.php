@@ -126,10 +126,13 @@ class UserControllerTest extends WebTestCase {
 
 		$route = $this -> client -> getContainer() -> get('router') -> generate('api_v1_put_user', array('userID' => $user -> getId(), '_format' => 'json'));
 
-		$this -> client -> request('PUT', $route, array(), array(), array('CONTENT_TYPE' => 'application/json'), '{"name":"john", "email":"john1@doe.com", "password":"test"}');
+		$this -> client -> request('PUT', $route, array(), array(), array('CONTENT_TYPE' => 'application/json'), '{"name":"jack", "email":"jack@test.com", "password":"test"}');
 
 		$this -> assertJsonResponse($this -> client -> getResponse(), 201, false);
-		$fixture -> deleteUserByEmail('john1@doe.com');
+		$checkedUser = $fixture->getUserByEmail('jack@test.com');
+		$this->assertEquals('jack', $checkedUser->getName());
+		$this->assertEquals(md5('test'), $checkedUser->getPassword());
+		$fixture -> deleteUserByEmail('jack@test.com');
 
 	}
 
