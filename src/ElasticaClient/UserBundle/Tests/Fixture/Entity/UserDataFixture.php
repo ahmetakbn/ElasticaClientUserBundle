@@ -53,12 +53,24 @@ class UserDataFixture {
 
 	/**
 	 * Deletes user by email
+	 * 
+	 * @param string $userEmail
 	 */
 	public function deleteUserByEmail($userEmail) {
 		$user = $this -> userService -> getByEmail($userEmail);
 		if ($user) {
 			$this -> userService -> deleteUser($user -> getId());
 		}
+	}
+	
+	/**
+	 * Gets user by email
+	 * 
+	 * @param string $userEmail
+	 * @return User
+	 */
+	public function getUserByEmail($userEmail){
+		return $this -> userService -> getByEmail($userEmail);
 	}
 
 }
